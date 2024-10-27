@@ -7,3 +7,15 @@ const quantityInput = document.getElementById('quantity'); //retrieves HTML elem
 const totalPriceElement = document.getElementById('total-price'); //retrieves HTML element: total-price
 const placeOrderButton = document.getElementById('place-order'); //retrieves HTML element: place-order
 const orderSummary = document.getElementById('order-summary'); //retrieves HTML element: order-summary
+
+// Task 3: Calculate Total Price Dynamically
+function updateTotalPrice() { //updateTotalPrice function
+    const productPrice = parseFloat(productSelector.value); //represents price of selected product
+    const quantity = parseInt(quantityInput.value); //represents number of products being purchased
+    const totalPrice = productPrice * quantity; //calculating total price
+    
+    totalPriceElement.textContent = totalPrice.toFixed(2); //output total price
+}
+
+productSelector.addEventListener('change', updateTotalPrice); //task 2 event listener
+quantityInput.addEventListener('input', updateTotalPrice); //task 2 event listener
